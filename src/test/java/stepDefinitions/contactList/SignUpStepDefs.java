@@ -38,7 +38,7 @@ public class SignUpStepDefs {
     }
 
     @And("user closes driver")
-    public void userClosesDriver() {
+    public void userClosesDriver() throws InterruptedException {
         Driver.quitDriver();
     }
 
