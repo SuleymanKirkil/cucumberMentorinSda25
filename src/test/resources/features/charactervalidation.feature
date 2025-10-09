@@ -28,4 +28,32 @@ Feature: Character Validation on Evil Tester
   Then user verifies verifies valid and invalid inputs
   And user closes driver
 
+  @ValidDataScenarioOutline
+  Scenario Outline: the character validation functionality with scenario outline
+    Given user goes to "https://testpages.eviltester.com/styled/apps/7charval/simple7charvalidation.html"
+    When user enter "<valid data>" in characters field
+    And clicks on check Input
+    Then user verifies data is valid
+    Examples:
+      | valid data |
+      | 12sdfgr    |
+      | sdfgrrf    |
+      | fgr4538    |
+      | *sd4325    |
+      | sd4eaf3    |
+
+  @InValidDataScenarioOutline
+  Scenario Outline: the character validation functionality with scenario outline
+    Given user goes to "https://testpages.eviltester.com/styled/apps/7charval/simple7charvalidation.html"
+    When user enter "<valid data>" in characters field
+    And clicks on check Input
+    Then user verifies data is invalid
+    Examples:
+      | valid data  |
+      | 12gr        |
+      | sdfgrrf sdf |
+      | f38         |
+      | *sd432&5    |
+      | sd4eaf&3    |
+
 
