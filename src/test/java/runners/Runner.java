@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         publish = true,
         features = "src/test/resources/features",
         glue = {"stepDefinitions","hooks"},
-        tags = "@charValidation",
+        tags = "@githubFix",
         dryRun = false
 )
 public class Runner {
